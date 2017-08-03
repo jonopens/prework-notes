@@ -1,0 +1,10 @@
+pwd
+ls
+cd
+mkdir
+touch
+open
+rm (-rf, recursive, force)
+rmdir
+cp
+mv (move or rename)

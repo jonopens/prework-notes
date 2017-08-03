@@ -1,0 +1,33 @@
+Fork via Github project
+
+git clone [SSH URL from GitHub]
+
+git remote -v 
+
+git status 
+** has anything changed from the cloned version? list it.
+
+git add [file]
+** add a single for commit queue; “stage for commit”
+
+git add .
+** keep track of all changes made across current directory
+
+git commit -am “[message on what was committed]”
+** origin/master is the central, distributed copy of files
+
+git log
+** show changes to clone repo
+
+git push
+** send local changes to remote copy on GitHub
+
+Go to GitHub and create pull request in my remote by clicking the green button
+
+Process for labs is as follows:
+- Fork the lab via github.
+- Clone your fork.
+- Solve the lab
+- Commit your changes
+- Push the changes to your fork.
+- Open a Pull Request from your fork.
