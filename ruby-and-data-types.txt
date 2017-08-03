@@ -1,0 +1,33 @@
+Programs are generally composed of basically three things:
+- keywords (reserved words)
+- data (a string, an integer, a float, a Boolean, etc.)
+- a bareword (a variable)
+
+Anything that doesn’t adhere to those three things will cause an error
+
+Six (6) data types in Ruby
+
+- strings
+- - methods
+- - - .length
+- - - .upcase
+- - - .downcase
+- - - .reverse
+- numbers
+- - two number types
+- - - fixnum (whole numbers)
+- - - floats
+- - methods
+- - - .floor (low round)
+- - - .round (nearest round)
+- - - .ceil (high round)
+- booleans
+- - for if/case statements
+- - true/false
+- symbols
+- - denoted with : (:some-kind-of-thing)
+- arrays
+- - [“hello”,”world”)
+- hashes
+- - key value pairs
+- - {“danny” => “brooklyn”, “joe” => “new jersey”}
