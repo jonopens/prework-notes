@@ -9,7 +9,7 @@ Six (6) data types in Ruby
 
 - strings
 - - methods
-- - - .length
+- - - .length & .size
 - - - .upcase
 - - - .downcase
 - - - .reverse
@@ -21,6 +21,7 @@ Six (6) data types in Ruby
 - - - .floor (low round)
 - - - .round (nearest round)
 - - - .ceil (high round)
+- - - .next (increment by one whole number; only works on fixnum)
 - booleans
 - - for if/case statements
 - - true/false
@@ -28,6 +29,34 @@ Six (6) data types in Ruby
 - - denoted with : (:some-kind-of-thing)
 - arrays
 - - [“hello”,”world”)
+— - methods
+- - - .sort (order by value if numbers)
 - hashes
 - - key value pairs
 - - {“danny” => “brooklyn”, “joe” => “new jersey”}
+
+In Ruby, there are two ways to create data:
+
+For Strings
+
+literal constructor: 
+“hello” => “hello”
+
+class constructor: 
+String.new(“hello”) => “hello”
+
+For Arrays
+
+literal constructor:
+[1, 3, 400, 7]
+
+class constructor:
+Array.new => [] 
+
+For Hashes
+
+literal constructor: 
+{“1” => “2”, “3” => “4”}
+
+class constructor
+Hash.new => {}
