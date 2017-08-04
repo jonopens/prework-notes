@@ -1,0 +1,21 @@
+LOCAL VARIABLES only apply where they are declared - “If we define a variable within a method definition, only the method knows about that variable.”
+
+from lecture notes:
+
+def my_method
+  local_variable = "Only my method knows about me!"
+end
+ 
+puts local_variable
+=> NameError: undefined local variable or method `local_variable' for main:Object
+
+GLOBAL VARIABLES can be accessed anywhere in a program and are declared with a dollar sign in front
+
+$global_variable = “wtf, mate”
+
+global variables should be used sparingly if at all - they break encapsulation and can make debugging difficult to accomplish.
+
+CONSTANTS are either in ALL CAPS or Capitalized. Their scope is dependent on context - they are global when defined as such and local when defined within classes and modules. 
+
+Constants cannot be defined within methods.
+Constants should not be reassigned.

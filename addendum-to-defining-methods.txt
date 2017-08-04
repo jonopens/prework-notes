@@ -1,0 +1,9 @@
+further defining methods with optional arguments
+
+if we want to have an option argument, we only need to assign it in the method definition like so:
+
+def salad_spinner_ingredients(thing1 = “lettuce”, thing2, thing3)
+	puts “I want a salad that has #{thing1}, #{thing2}, and #{thing3} in it”
+end
+
+in the above, if we only supplied two arguments, lettuce would be added as the default value for the thing1 variable.
