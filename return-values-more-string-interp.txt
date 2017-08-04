@@ -1,0 +1,21 @@
+without the return keyword, the return value of a method in ruby is the return output of the last line of the code block
+
+def salad
+	weird = “hey delicious.”
+	puts weird
+end
+
+the return value above is nil, so we should declare the return value
+
+def salad
+	weird = “hey delicious.”
+	return weird
+end
+
+
+string interpolation
+
+single quotes do not support string interpolation
+
+OK: puts “something something #{name}.”
+NOT OK: puts ‘something something #{name}.’

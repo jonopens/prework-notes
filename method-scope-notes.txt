@@ -1,0 +1,23 @@
+method scope
+
+local variables created outside of a method will not be available inside of a method
+
+conversely, local variables created inside of a method will not be available outside of a method (they “fall out of scope”)
+
+For example, the following code would result in a NameError when the method name is invoked
+
+evil_monster = "Bowser"
+ 
+def princess_peaches_castle
+  puts "#{evil_monster} is trying to kidnap Princess Peach!"
+end
+
+local scope outside of a method can only be used inside of a method if it is actively passed in. Taking the same code again but with an argument passing in the evil_monster variable, invocation will not lead to a NameError:
+
+evil_monster = "Bowser"
+ 
+def princess_peaches_castle(evil_monster)
+  puts "#{evil_monster} is trying to kidnap Princess Peach!"
+end
+ 
+princess_peaches_castle(evil_monster)

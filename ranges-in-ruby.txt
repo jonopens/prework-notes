@@ -1,0 +1,9 @@
+In Ruby, a "range" is a set of values with a beginning and an end. A range can contain strings or integers.
+
+A range of strings: ("a", "b", "c", "d")
+A range of integers: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+‘
+A range can be constructed using this notation: (100..200)
+Or this notation: (100...200)
+
+Using a .. ("double-dot") includes the second number (200) in the range, while using a ... ("triple-dot") excludes it.
