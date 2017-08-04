@@ -1,0 +1,17 @@
+variables
+
+when you reference a variable that has since had its value reassigned, i.e.
+
+toast = 1
+bread = toast
+toast = 2
+puts bread would yield 1, not 2
+
+pass by value vs. pass by reference
+
+Ruby is “pass by value” in that it creates a copy of the reference to an object, thereby preserving the original value (even if reassignment occurs)
+
+interpolation is pretty easy
+
+salad = “goat cheese and watermelon salad”
+puts “For lunch, I’d like a #{salad}, please.”

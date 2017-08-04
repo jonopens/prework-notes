@@ -1,0 +1,17 @@
+Error anatomy
+
+WHERE, WHY, WHO
+
+NameError = undefined or invalid, like when we don’t assign any value to a variable
+
+SyntaxError = non-sensical code, does not follow rules/conventions
+
+TypeError = Ruby encounters an object of an unexpected type (string + number)
+
+ZeroDivisionError = self-explanatory
+
+NoMethodError = calling a method not defined for a particular object; usually the result of a nil; also can be result of conflicting types (e.g. attempting to manipulate a string with fixnum methods)
+
+nil = Python None Type
+
+ArgumentError = too few or too many arguments provided
