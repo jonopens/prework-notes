@@ -1,0 +1,53 @@
+“truthy” or “falsey” are programming adjectives to describe the state of being true or false
+
+in Ruby, only nil and false are falsey states, everything else is truthy
+
+!true => false
+
+a single bang operator (!) will negate the state of the object it is referencing
+
+> something = nil
+> !something 
+=> true
+> something = 1
+> !something 
+=> false
+
+a double bang operator (!!) will return the truthiness state of the object it is referencing
+
+> !!nil
+=> false
+> !!true
+=> true
+> !!”yeah!”
+=> true
+
+true and false have their own data types:
+- every instance of true is an instance of the TrueClass
+- every instance of false is an instance of FalseClass
+
+
+Boolean logic operators include:
+
+! is the NOT operator
+&& is the AND operator
+|| is the OR operator
+
+Boolean Comparison operators include
+== is the COMPARISON operator
+!= is the negation of the COMPARISON operator
+> is greater than
+< is less than
+>= is greater than or equal to
+<= is less than or equal to
+
+example of usage to control flow
+
+> easter_eggs = 16
+> ducklings = 3
+> ducklings.class
+=> Fixnum
+> easter_eggs.class
+=> Fixnum
+> ducklings.class == easter_eggs.class
+=> true
