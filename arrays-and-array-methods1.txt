@@ -1,0 +1,68 @@
+arrays
+
+can be initialized with standard means
+
+> new_array = []
+=> []
+> new_array_2 = Array.new
+=> []
+
+we can add new items to the end of an array with one of two methods, the “shovel” method or the push method
+
+> new_array << “item we want”
+=> [“item we want”]
+> new_array.push(“salad”)
+=> [“item we want”,”salad”]
+
+to add to the front of the array
+
+> new_array.unshift(“spiders”)
+=> [“spiders”,”item we want”,”salad”]
+
+to remove an item from end of array, we use the pop method which also returns the item we removed
+
+> new_array.pop
+=> “salad”
+> new_array
+=> [“spiders”,”item we want”]
+
+to remove an item from the front of the array, we use the shift method
+
+> new_array.shift
+=> “spiders”
+> new_array
+=> [”item we want”]
+
+indexes are referred to like elsewhere using square brackets; we can request the value of the array index like so
+
+> new_array[0]
+=> “item we want”
+
+other array methods that might be useful
+
+> new_array.count
+=> 1
+> new_array.reverse
+=> [“item we want”]
+> new_array.include?(“item we want”)
+=> true
+> new_array.include?(“Item we want”)
+=> false
+> new_array.push(“yay”)
+=> [“item we want”,”yay”]
+> new_array.unshift(“hurray”)
+=> [“hurray”,”item we want”,”yay”]
+> new_array.first
+=> “hurray”
+> new_array.last
+= “yay”
+
+we can request the index position of an item if we know it’s value
+
+> new_array.index(“yay”)
+=> 2
+
+requesting the value of an index number that doesn’t exist returns nil
+
+> new_array.index(“spiders”)
+=> nil

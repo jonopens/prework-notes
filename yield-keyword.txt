@@ -1,0 +1,35 @@
+the yield keyword
+
+a BLOCK is a chunk of code enclosed in DO/END keywords or curly brackets; methods like #EACH and #COLLECT get called with blocks
+
+iterators actually rely on the YIELD keyword to pass elements in their collection to the block of code
+
+the YIELD keyword essentially says, “stop executing the code in the method and instead execute the code in the following block; after that you can get back to the method code”
+
+said differently, YIELD signals a context switch, from method code to block code
+
+so a method with YIELD used inside of it will “pause” to run the block code and then get back to the method
+
+def yielding
+  puts "the program is executing the code inside the method"
+  yield
+  puts "now we are back in the method"
+end
+
+> yielding { puts "the method has yielded to the block!" }
+=> the program is executing the code inside the method
+=> the method has yielded to the block!
+=> now we are back in the method
+
+YIELD can also be passed arguments to be used in the block code which it will receive from the method definition
+
+def yielding_with_arguments(num)
+  puts "the program is executing the code inside the method"
+  yield(num)
+  puts "now we are back in the method"
+end
+
+> yielding_with_arguments(2) {|i| puts i * 2}
+=> the program is executing the code inside the method
+=> 4
+=> now we are back in the method

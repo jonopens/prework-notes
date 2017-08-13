@@ -1,0 +1,67 @@
+basic control flow can be summarized in the following form
+
+if (condition)
+  # code
+elsif (condition)
+  # code
+elsie (condition)
+  # code
+else
+  # code
+end
+
+can also be expressed using a ternary operator following the form
+
+condition ? action_if_true : action_if_false
+
+we can also include logical control flow statements called statement modifiers in-line with our code as in the example:
+
+this_year = Time.now.year
+puts "Hey, it's 2015!" if this_year == 2015
+
+in the above, the if keyword means it will execute the PUTS only when the value of this_year is exactly 2015 using the IF keyword
+
+conversely, the PUTS will execute in every situation where this_year DOES NOT evaluate to 2015 using the UNLESS keyword
+
+this_year = Time.now.year
+puts "Hey, it's 2015!" unless this_year == 2015
+
+_______
+
+
+we also have the CASE keyword that is effective when you have three or more conditions to compare to a value
+
+“code smell” or “code odor” is code that is needlessly complex
+
+a CASE statement allows us to compare multiple conditions against a single value; the case is being tested, as it were
+
+case name
+
+  when “Alice”
+    puts “Hi Alice”
+  when “Mad Hatter”
+    puts “care for some tea?”
+  when “Queen of Heart”
+    puts “you mean, girl”
+  else
+    “sup”
+end
+
+
+=== is also referred to as the “case equality operator” or “threequals”
+
+Here’s the example from the notes that includes an occasion of getting user input:
+
+print "Enter your grade: "
+grade = gets.chomp
+ 
+case grade
+  when "A"
+    puts "Good job, Homestar!"
+  when "B"
+    puts "You can totally do better!"
+  when "C"
+    puts "Find a mentor to help you!"
+  else
+    puts "You're just making that up!"
+end

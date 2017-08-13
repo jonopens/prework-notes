@@ -1,0 +1,51 @@
+looping in Ruby
+
+here’s a simple looping program to PUTS a string 10x to terminal using the Fixnum.TIMES DO construction
+
+10.times do 
+    puts "Hi! Welcome to my very repetitive program"
+end
+
+interestingly, it returns the fixnum 10 - I’d like to know why that is. is it just confirming the total number of completed loops in case there’s an error?
+
+a simple infinite loop script using the LOOP DO construction
+
+loop do
+  puts "I have found the Time Machine!"
+end
+
+like in Python, Ruby uses the BREAK keyword to stop looping if conditions are met; it “breaks” the loop cycle
+
+like so many other languages, we can use a counter variable and increment with += to add to the counter variable
+
+counter = 0 
+loop do 
+  counter += 1
+  puts "Iteration #{counter} of the loop"
+  if counter >= 10 
+    break 
+  end
+end
+
+Also, there’s a WHILE loop as with many other languages
+
+counter = 0
+while counter < 5
+  puts “shut up”
+  counter += 1
+end
+
+there is also an UNTIL loop that looks for equality
+
+counter = 0
+until counter == 5
+  puts “shut up”
+  counter += 1
+end
+
+there is also a FOR loop
+
+for time in number_of_times
+
+
+

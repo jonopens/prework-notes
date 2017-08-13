@@ -1,0 +1,54 @@
+A CLOSURE is a block of functional code with variables that are bound to the environment that the closure is called in.
+
+closures can be passed around like an object
+
+closures can be defined in one scope and called in a different scope
+
+closures can access variables from another environment and outside of the current scope
+__________
+
+BLOCKs are not objects, just a form of closure like
+
+do…end or { }
+__________
+
+PROCs are a specific type of closure in Ruby that are like blocks but with a few differences
+- a proc can be assigned to a variable
+- a proc is executed via the call method ( > Proc.call )
+- more than one proc can be passed to a method
+
+a PROC is a block turned into an object by being assigned to an instance of the Proc class such as 
+
+> greeting = Proc.new { "Hello!" }
+ 
+> greeting.call
+=> "Hello!"
+
+or such as 
+
+> greeting = Proc.new { |name| "Hello, #{name}!" }
+ 
+> greeting.call("Amanda")
+=> "Hello, Amanda!"
+__________
+
+a LAMBDA is similar to a proc, functionally speaking
+
+> plus_one = lambda { |n| puts n + 1 }
+
+> array = [1, 2, 3]
+
+> array.each(&plus_one)
+=> 2
+=> 3
+=> 4
+
+the “&” (ampersand) turns the LAMBDA into a block which is the argument that each is expecting.
+
+in addition to the above, a LAMBDA can be declared this way
+
+> plus_one = ->(n) { puts n + 1 }
+
+DIFFERENCE BETWEEN LAMBDAS AND PROCS
+- lambdas expect a certain number of arguments and check for them (throws errors); a proc just returns nil for the missing argument (does not throw error)
+

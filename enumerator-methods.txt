@@ -1,0 +1,34 @@
+enumerators
+
+.EACH is an enumerator that returns the same data structure as was given to it, i.e. if it receives an array, it will return that same array; if it received a hash, it would output that same hash
+
+.COLLECT and .MAP are both enumerators with one large difference to #EACH - they will output a new data structure (hash or array), not the original one as with .EACH. .COLLECT and .MAP are identical in function
+
+.SELECT will iterate and then return the subset from within the data structure that return true for a conditional statement
+
+def even_nums(nums)
+  nums.select do |x|
+    x.even?
+  end
+end
+
+so in the above, if we had an array with [2,5,6,7,8,10], we would get => [2,6,8,10]
+
+
+.FIND returns is similar to .SELECT but only returns the first item that matches the conditional statement; in the above code block if we used .FIND instead, we would get back => 2
+
+
+.DELETE_IF will instead delete any elements that match a conditional statement and return whatever remains of the collection
+
+.INCLUDE? has been covered before, but it determines if a collection contains a specific element
+
+> [1, 2, 3].include?(1)
+=> true
+
+> [1, 2, 3].include?(4)
+=> false
+
+.ANY? will return true if any element in a collection matches the conditional.
+.ALL? will return true if all elements in a collection match a conditional
+
+in iteration, the shovel method (var << “string”) will add a string to each element in a collection

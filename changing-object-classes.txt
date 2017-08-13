@@ -1,0 +1,11 @@
+a few methods for changing object classes
+
+> string.split(separator)
+=> array that was split by the separator value
+
+> array.join(separator)
+=> string with items delimited by the separator value
+
+> range.to_a
+=> array with each value of the range
+
