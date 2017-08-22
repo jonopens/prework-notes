@@ -1,0 +1,143 @@
+
+CSS notes are written in the following format:
+
+/*
+notes and stuff
+*/
+
+DESCENDENT SELECTORS will select all matching elements that match the criteria
+
+#nav li {
+    font-size: 18px;
+}
+
+<ul id=“nav”>Whoa
+    <li>yay</li>
+    <li>yay</li>
+    <li>yay</li>
+    <li>yay
+	<ul>Uh Oh
+	    <li>boo</li>
+	    <li>boo</li>
+	    <li>boo</li>
+	</ul>
+    </li>
+</ul>
+
+in the above all the li items would take the font-size attribute value described in the declaration
+
+
+CHILD SELECTORS will only select direct descendent elements of the next generation, not grandchildren or great grandchildren, to apply rules. They are denoted by the “>” (greater than) character between elements in the selector
+
+#nav > li {
+    font-size: 18px;
+}
+
+<ul id=“nav”>Whoa
+    <li>yay</li>
+    <li>yay</li>
+    <li>yay</li>
+    <li>yay
+	<ul>Uh Oh
+	    <li>boo</li>
+	    <li>boo</li>
+	    <li>boo</li>
+	</ul>
+    </li>
+</ul>
+
+in the above, the “boo” list items would not be styled according to the declaration.
+
+DIRECT SIBLING SELECTORS only selects the first sibling element that is directly after the matching selector name
+
+h1 + p {
+    color: black;
+}
+
+<h1>hell yeah</h1>
+<p>awww yeah</p>
+<p>sheeeeit</p>
+
+the “sheeeit” <p> element above would not be styled.
+
+GENERAL SIBLING SELECTOR will instead select all sibling elements that match the criteria after the ~ symbol
+
+h1 ~ p {
+    color: black;
+}
+
+<h1>hell yeah</h1>
+<p>awww yeah</p>
+<span> wait what</span>
+<p>also yeah</p>
+
+both p elements would be styled in the above snippet
+
+the UNIVERSAL SELECTOR will apply to anything not already styled (further down the cascade)
+
+* {
+    color: black;
+}
+
+ATTRIBUTE SELECTORS seek elements that contain attributes that match the value and attribute name
+
+img[alt=“Cat”] {
+    border: 1px solid black;
+}
+
+attribute selectors can be further modified with common regex concepts
+
+a[href^=“https”] {                       starts with
+    color: red;
+}
+
+p[class$=“dog”] {                        ends with
+    color: blue;
+}
+
+span[class*=“garfield”] {                contains (wildcard)
+    color: green;
+}
+
+p[class~=“dog”] {                        value is space separated
+    color: purple;
+}
+
+p[class|=“dogs”] {                        value is hash/hyphen separated
+    color: purple;
+}
+
+
+a PSEUDO CLASS SELECTOR looks at a particular event state or relationship to determine if an element should be styled; some pseudo class selectors are not supported across browsers.
+
+a:hover {
+    text-decoration: underline;
+}
+
+p:first-child {
+    color: green;
+}
+
+p:last-child {
+    color: orange;
+}
+
+.clearfix:after
+
+.clearfix:before
+
+div:not(#container) - would affect only divs not containing the id “container”
+
+p::first-line - would affect the first line of a p
+
+p::first-letter - would affect the first letter of a p
+
+ul:nth-child(3) - starts from the beginning
+
+ul:nth-last-child(3) - starts from the end
+
+on CUSTOM FONT USAFE
+@font-face {
+    font-family: ‘Custom Font Name’
+    src: url(relative/path/to/font/file.webfont)
+}

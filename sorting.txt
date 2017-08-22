@@ -1,0 +1,59 @@
+sorting
+
+comparison operators work on strings too!
+
+for example
+
+> “crabs” > “bananas”
+=> true
+
+> “apples” > “zap”
+=> false
+
+.each and .collect both iterate over one element at a time but we want to iterate over two elements at once so we will use .sort instead.
+
+example:
+
+> array = [7, 3, 1, 2, 6, 5]
+=> [7, 3, 1, 2, 6, 5]
+ 
+> array.sort do |a, b|
+>   if a == b
+>     0
+>   elsif a < b
+>     -1
+>   elsif a > b
+>     1
+>   end
+> end
+=> [1, 2, 3, 5, 6, 7]
+
+the notes from the Sorting lesson are:
+
+	The .each method starts at the beginning of the array and passes each 	item one at a time to the code in the block (the code in between 	do...end). We see .each passing each element of the array to the 	block here: |num|, by placing a placeholder for each element in 	between the pipes (| |).
+	
+	The .sort method is different. It passes elements two at a time into 	the block, and compares those two elements inside the block with our 	if & elsif logic:
+	
+	If a and b are equal, the block will return 0, and .sort will leave 	them in their current places.
+	
+	If a is less than b and belongs before it, the block will return -1 	and .sort will once again leave them in their current places (because 	a is already before b.)
+	
+	If a is greater than b and belongs after it, the block will return 1 	and .sort will switch the locations of a and b.
+	
+	The first time through the collection, .sort passes 7 and 3 into the 	block and compares them, since 7 is greater than 3, it switches the 	location of those two elements. If we were to look at the array after 	going through just one iteration of .sort, it would look like this:
+	[3, 7, 1, 2, 6, 5]
+	
+	On the second pass through the array, .sort yields the next two items 	to the block, in this case 7 and 1. It compares them in the same way, 	makes any necessary changes to the location of the items in the 	array, and then moves on to the next pair.
+
+the “spaceship operator” ( <=> ), also called the COMBINED COMPARISON OPERATOR
+
+- returns 0 if the first operand (value being operated on) is equivalent to the second
+- returns -1 if the first operand is less than the second
+- returns 1 if the first operand is greater than the second
+
+so, given that, we can take some of the code smell out by refactoring the example code with the following:
+
+> array.sort do |a, b|
+>   a <=> b
+> end
+=> [1, 2, 3, 5, 6, 7]

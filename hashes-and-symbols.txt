@@ -1,0 +1,28 @@
+hashes
+
+hashes are not indexed by number unlike arrays
+
+to create hashes, we do it the same way we do it just like with arrays
+
+hash = {}
+hash = Hash.new
+
+hash keys must be unique or else the overwrite the value of the key they reference
+
+symbols are frequently used in hashes because they are immutable - they are always located at the same place in memory whereas two string variables with the same text will not have the same location in memory
+
+> name1 = “Bob”
+=> “Bob”
+> name2 = “Bob”
+=> “Bob”
+> name1.object_id == name2.object_id
+=> false
+
+because of symbols are always the same location in memory, they use less when called and are more efficient.
+
+for versions of Ruby of 1.9+, an alternative syntax was introduced that is equivalent to the hash-rocket
+
+> {:dude => "swordfish"} == {dude: "swordfish"}
+=> true
+
+altering a hash through the []= method only returns the changed value, not the entire hash

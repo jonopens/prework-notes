@@ -1,0 +1,21 @@
+Ruby variables, with a few exceptions like variables bound to integers do not hold object values. Rather, they have a reference to the object. The object is the thing that carries its characteristics, like its component letters, etc.
+
+data like integers, floats, fixnums and symbols require a small, fixed amount of memory, so in those cases you are actually send the value itself, not a reference.
+
+this brings up the idea of MUTABILITY in Ruby: an object is said to be mutable if a variable points to it and the value can be changed without altering the reference. This is true of things like strings and arrays.
+
+the direct quote from the readings:
+
+	Because passing by references allows the object to be of any size, 	objects like strings and arrays can change; they are said to be 	"mutable". This means that if you pass such a variable into a method, 	the method can operate on the value of that variable and change its 	value while still keeping the reference intact.
+
+so, in effect, ruby has some data types that are pass by value and some that are pass by reference:
+
+DATA TYPE : PASS BY TYPE
+
+string : reference
+array : reference
+hash : reference
+integer : value
+fixnum : value
+float : value
+boolean : value
