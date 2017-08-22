@@ -136,7 +136,7 @@ ul:nth-child(3) - starts from the beginning
 
 ul:nth-last-child(3) - starts from the end
 
-on CUSTOM FONT USAFE
+on CUSTOM FONT USAGE
 @font-face {
     font-family: ‘Custom Font Name’
     src: url(relative/path/to/font/file.webfont)

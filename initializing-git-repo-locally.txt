@@ -1,0 +1,47 @@
+initializing a git repo from terminal
+
+if existing, skip ahead to stars
+
+else
+   mkdir [name]
+   cd [name]
+   mv [current/file/path] .
+
+********
+
+git init
+git add . OR git add [specific file/s]
+git commit -m “Initial commit”
+
+go to GitHub and click “+” icon
+select New repo
+type in name
+DO NOT initialize with readme
+
+git remote add origin [clone SSH address]
+git push -u origin master
+
+
+OTHER GIT NOTES
+
+git branch # to see all live branches
+git branch -d [branch name] # to delete a branch that has already been merged
+
+git fetch origin [branch name] # updated remote-tracking branches
+git checkout [branch name] # you’ll need to checkout the branch even tho it won’t show up it “git branch”
+
+git fetch —all # will update all remote tracking branches
+
+git diff # will tell us what changed about a file
+
+the -a flag in git commit automatically adds tracked files to the commit
+
+git reset [file name] will unstage a file from the current commit
+
+#the following steps will return a file to its last committed state
+git checkout [filename]
+git diff
+git status # confirms the change
+
+git pull origin master # gets the remote from the remote server
+

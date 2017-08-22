@@ -1,0 +1,62 @@
+box model order for 1-4 values in CSS
+
+1 value: applied to top, right, bottom, left
+2 values: first value applied to top/bottom; second value applied to left/right
+3 values: first value applied to top; second value applied to left/right; third value applied to bottom
+4 values: first value => top; second value => right; third value => bottom; fourth value => left
+
+Four main layout types:
+
+FIXED - we dictate a height and width (px)
+ELASTIC - containers scale as font sizes increase and decrease (em)
+FLUID - all elements are managed with percentages and scale as screens get larger or smaller
+THRESHOLD/BOUNDED: we define a min and max value for containers past which sizes will not scale
+
+
+OVERFLOW has 4 possible values: hidden, visible, scroll, auto; auto will detect whether scroll bars are needed and add them as necessary
+
+elements with fluid bounds are bounded by their parent containers
+
+for example, if we have a div with height 100% but body and html elements are not 100%, the div will eventually run out of space
+
+ELEMENT DISPLAY
+
+INLINE elements appear side by side and do not accept width or top and bottom margins; for INLINE elements that are adjacent, margins WILL NOT overlap and WILL add together
+
+BLOCK elements display one above the other and will take up the width of an entire line if not specified; can take a top and bottom margin; for BLOCK elements that are adjacent, margins WILL overlap and WILL NOT add together
+
+INLINE-BLOCK elements have the qualities of inline items but they accept width and top/bottom margins
+
+if we FLOAT all of the elements inside of a parent element, it doesn’t know how high it needs to be anymore - it loses its reference and collapses
+
+if we apply a CLEARFIX which inserts an empty string into the bottom of the div (or whatever)
+
+.clearfix:after {
+    content: “”;
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    line-height: 0;
+}
+
+when applying width rules or CSS in general, in order to create better cross-browser support, we can add two prefixes to new CSS rules
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+the BORDER-BOX value simulates the IE box model in which padding and border are considered part of the total box size; this is opposed to CONTENT-BOX (the default) in which padding, border, and margin are not part of the box being sized
+
+position
+
+RELATIVE positioning will move an element (via the top, right, bottom, left CSS rules) the number of pixels we dictate in our CSS rules from its original position
+
+ABSOLUTE positioning will place the element with respect to the browser window or to relatively positioned parent element; an ABSOLUTE positioned element that has top: 0; right: 0; will show up at the top right after padding, border and margin are applied
+
+  if an ABSOLUTE positioned element is inside an element WITHOUT special positioning, it will position relative to the entire screen
+  if an ABSOLUTE positioned element is inside an element WITH special positioning, it will position itself relative to its parent element (the one with the RELATIVE positioning) 
+
+FIXED positioning means that an element will stay in place when the browser window scrolls
